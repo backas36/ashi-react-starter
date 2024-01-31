@@ -6,7 +6,8 @@ const config = {
   semi: true,
   useTabs: false,
   jsxSingleQuote: false,
-  bracketSpacing: "always",
+  bracketSpacing: true,
+  arrowParens: "always",
   printWidth: 140,
 };
 

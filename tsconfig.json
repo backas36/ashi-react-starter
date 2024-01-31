@@ -29,7 +29,8 @@
   "include": [
     ".eslintrc.cjs",
     "src",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "vitest.setup.ts"
   ],
   "references": [
     {

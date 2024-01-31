@@ -1,20 +1,19 @@
 import { render, screen } from "@testing-library/react";
 
-import { describe, expect, it } from "vitest";
+import { MemoryRouter } from "react-router-dom";
 
-import App from "./App";
+import { App } from "./App";
 
 describe("App", () => {
-  it("renders learn react link", () => {
-    // ARRANGE
-    render(<App />);
-    // ACT
+  it("Render not found if invalid path", () => {
+    const badRoute = "/bad-route";
 
-    // ASSERT, EXPECT
-    expect(
-      screen.getByRole("heading", {
-        level: 1,
-      })
-    ).toHaveTextContent("Hello World");
+    render(
+      <MemoryRouter initialEntries={[badRoute]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText(/not found/i)).toBeInTheDocument();
   });
 });
